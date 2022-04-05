@@ -1,23 +1,20 @@
 import random 
 
-def rock_paper_scissors(): 
-    user = input("Select 'r' for rock, 'p' for paper, or 's' for scissors: ") 
+def rock_paper_scissors():
+    player = input("Select 'r' for Rock, 'p' for Paper, or 's' for Scissors: ")
+    choices = ['r', 'p', 's']
+    opponent = random.choice(choices)
 
-    choices = ['r', 'p', 's'] 
+    if player == opponent:
+        return print(f"It's a tie! You both selected {opponent}!")
 
-    opponent = random.choice(choices) 
+    if winner(player, opponent):
+        return print(f"You win! {player} beats {opponent}!")
 
-    if user == opponent:
-        return print(f"It's a tie! You both selected {user}!")
+    if winner(player, opponent) != True:
+        return print(f"You lose! {opponent} beats {player}!")
 
-    if is_winner(user, opponent):
-        return print(f"You win! {user} beats {opponent}!")
-
-    if is_winner(user, opponent) != True:
-        return print(f"You lose, {opponent} beats {user}") 
-
-def is_winner(user, computer):
-    if (user == 'r' and computer == 's') or (user == 'p' and computer == 'r') or (user == 's' and computer == 'p'):
+def winner(user, cpu):
+    if (user == 'r' and cpu == 's') or (user == 'p' and cpu == 'r') or (user == 's' and cpu == 'p'):
         return True 
-
-rock_paper_scissors()
+rock_paper_scissors() 
