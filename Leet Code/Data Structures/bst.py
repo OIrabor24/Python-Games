@@ -3,6 +3,7 @@ class BinarySearchTreeNode():
         self.data = data 
         self.left = None 
         self.right = None 
+        
     
     def add_child(self, data):
         if data == self.data: #if the data's value already exists
@@ -71,6 +72,6 @@ print(numbers_tree.search(24))
 
 countries = ["India","Pakistan","Germany", "USA","China","India","UK","USA"]
 country_tree = build_tree(countries)
-
+print(country_tree) 
 
 print("Is USA in our list? ", country_tree.search("USA")) 

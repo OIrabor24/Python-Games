@@ -116,7 +116,7 @@ class BinarySearchTreeNode():
                 return self.right
             
             if self.right is None:
-                return self.right 
+                return self.left 
 
             max_val = self.left.find_max()
             self.data = max_val # copy the min val

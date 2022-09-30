@@ -1,4 +1,3 @@
-
 def InsertionSort(elements):
     for i in range(1, len(elements)):
         anchor = elements[i]
@@ -25,77 +24,48 @@ def insertion_sort(list_a):
 
     return list_a
 
-def insertion_sort(elements):
-    indices = range(1, len(elements))
+def InsertionSort2(elements):
+    indices = range(1, len(elements)) 
 
     for i in indices:
-        value_to_sort = elements[i]
-
-        while elements[i-1] > value_to_sort and i > 0:
-            elements[i], elements[i -1] = elements[i -1], elements[i]
-            i = i - 1 
-    return elements
-
-print(insertion_sort([3, 2, 5, 7, 4]))
-
-
-
-def insertion_sort3(elements):
-    indices = range(1, len(elements))
-
-    for i in indices:
-        value_to_sort = elements[i]
-
-        while elements[i-1] > value_to_sort and i > 0:
-            elements[i-1], elements[i] = elements[i], elements[i-1]
-            i -= 1 
-    return elements
-
- 
-print(insertion_sort3([3, 2, 5, 7, 4]))
-            
-
-def insertion_sort4(elements):
-    indices = range(1, len(elements))
-
-    for i in indices:
-        value_to_sort = elements[i]
-        while elements[i-1] > value_to_sort and i > 0:
+        while elements[i-1] > elements[i] and i > 0:
             elements[i], elements[i-1] = elements[i-1], elements[i]
             i -= 1 
     return elements
 
-print(insertion_sort4([3, 2, 5, 7, 4])) 
+tests = [
+    [],
+    [-1],
+    [0],
+    [-1, -5, -4, -9, -3, -2, -6],
+    [6, 4, 5, 0, 3, 2, 1, 7, 88, 55, 99]
+]
 
-def insertion_sort5(elements):
+for test in tests:
+    InsertionSort2(test)
+    print(test) 
+
+def insertionsort(elements):
     indices = range(1, len(elements))
-
     for i in indices:
-        value_to_sort = elements[i]
-        while elements[i-1] > value_to_sort and i > 0:
+        while elements[i-1] > elements[i] and i > 0:
             elements[i], elements[i-1] = elements[i-1], elements[i]
             i -= 1 
     return elements
-print(insertion_sort5([3, 2, 5, 7, 4]))
 
-def insertion_sort6(elements):
+for test in tests:
+    insertionsort(test)
+    print(test) 
+
+def Insertion3(elements):
     indices = range(1, len(elements))
 
     for i in indices:
-        value_to_sort = elements[i]
-        while elements[i-1] > value_to_sort and i > 0:
+        while elements[i-1] > elements[i] and i > 0:
             elements[i], elements[i-1] = elements[i-1], elements[i]
-            i -= 1 
-    return elements
-print(insertion_sort6([3, 2, 5, 7, 4]))
-
-def insertion_sort7(elements):
-    indices = range(1, len(elements))
-    for i in indices:
-        value_to_sort = elements[i]
-        while elements[i-1] > value_to_sort and i > 0:
-            elements[i], elements[i-1] = elements[i-1], elements[i]
-            i-= 1 
+            i -= 1
     return elements
 
-print(insertion_sort7([3, 2, 5, 7, 4]))
+for test in tests:
+    Insertion3(test)
+    print(test) 

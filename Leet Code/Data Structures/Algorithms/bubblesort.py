@@ -59,22 +59,7 @@ def BubbleSort(array):
 elements = [5,9,2,1,67,34,88,34, 80]
 print("Bubblesort 3:", BubbleSort(elements)) 
 
-def bubblesort4(array):
-    indices = len(array) - 1 
-    sorted = False 
-
-    while not sorted:
-        sorted = True 
-        for i in range(0, indices):
-            if array[i] > array[i+1]: #if this hold true then list cant be sorted yet!
-                sorted = False 
-                array[i], array[i+1] = array[i+1], array[i]
-    return array 
-
-elements = [5,9,2,1,67,34,88,34, 80]
-print("Bubblesort 4:", bubblesort4(elements)) 
-
-def bubblesort5(array):
+def BubbleSort3(array):
     indices = len(array) - 1 
     sorted = False 
 
@@ -82,10 +67,33 @@ def bubblesort5(array):
         sorted = True 
         for i in range(0, indices):
             if array[i] > array[i+1]:
-                sorted = False #aka these values are unsorted 38 > 6
+                sorted = False
                 array[i], array[i+1] = array[i+1], array[i]
-    
-    return array
-
+    return array 
+                
 elements = [5,9,2,1,67,34,88,34, 80]
-print("Bubblesort 5:", bubblesort4(elements)) 
+print("Bubblesort 3:", BubbleSort3(elements)) 
+            
+def Bubblesort4(elements):
+    indices = len(elements) - 1 
+    sorted = False 
+
+    while not sorted:
+        sorted = True 
+        for i in range(indices):
+            if elements[i] > elements[i+1]:
+                sorted = False 
+                elements[i], elements[i+1] = elements[i+1], elements[i] 
+    return elements
+
+def Bubblesort5(elements):
+    indices = len(elements) - 1 
+    sorted = False 
+
+    while not sorted:
+        sorted = True 
+        for i in range(indices):
+            if elements[i] > elements[i+1]:
+                sorted = False 
+                elements[i], elements[i+1] = elements[i+1], elements[i]
+    return elements
