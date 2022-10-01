@@ -3,6 +3,9 @@
 #2. pivot items to the left are smaller
 #3. pivot items to the right are larger
 #[2, 6, 5, 3, 0, 8, 7, 1]
+from operator import le
+
+
 def quick_sort(sequence):
     length = len(sequence)
     if length <= 1:
@@ -66,10 +69,10 @@ print('-' * 30)
 print(quicksort3([5,7,0,9,4,6,5,1,3,2]))
 
 def quicksort4(elements):
-    array = len(elements)
+    length = len(elements)
 
-    if array <= 1:
-        return elements 
+    if length <= 1:
+        return elements
     else:
         pivot = elements.pop()
     
@@ -80,10 +83,8 @@ def quicksort4(elements):
         if item > pivot:
             items_greater.append(item)
         else:
-            items_lower.append(item) 
+            items_lower.append(item)
+    
+    return quicksort4(items_lower) + [pivot] + quicksort4(items_greater)
 
-    return quicksort4(items_lower) + [pivot] + quicksort4(items_greater) 
-
-print('-' * 30)
 print(quicksort4([5,7,0,9,4,6,5,1,3,2]))
-

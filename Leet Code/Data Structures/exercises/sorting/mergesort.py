@@ -139,3 +139,99 @@ tests = [
 for test in tests:
     MergeSort(test)
     print(test) 
+
+def MergeSort2(array):
+    if len(array) > 1:
+        mid = len(array) // 2 
+        left = array[:mid]
+        right = array[mid:]
+
+        MergeSort2(left)
+        MergeSort2(right)
+
+        i = j = k = 0
+
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+                array[k] = left[i]
+                i += 1 
+            else:
+                array[k] = right[j]
+                j += 1 
+            k += 1 
+
+        while i < len(left):
+            array[k] = left[i]
+            i += 1 
+            k += 1 
+        
+        while j < len(right):
+            array[k] = right[j]
+            j += 1 
+            k += 1 
+    
+    return array 
+
+a = [17,21,29,38,4,9,25,32, 2, 3]
+print(MergeSort2(a)) 
+
+tests = [
+    [10, 3, 15, 7, 8, 23, 98, 29],
+    [],
+    [-1],
+    [3],
+    [9,8,7,2],
+    [1,2,3,4,5]
+]
+
+for test in tests:
+    MergeSort2(test)
+    print(test) 
+
+def MergeSort(array):
+    if len(array) > 1:
+        mid = len(array) // 2 
+        left = array[:mid]
+        right = array[mid:] 
+
+        MergeSort(left)
+        MergeSort(right) 
+
+        i = j = k = 0 
+
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+                array[k] = left[i]
+                i += 1 
+            else:
+                array[k] = right[j]
+                j += 1 
+            k += 1 
+        
+        while i < len(left):
+            array[k] = left[i]
+            i += 1 
+            k += 1 
+        
+        while j < len(right):
+            array[k] = right[j]
+            j += 1 
+            k += 1 
+    
+    return array 
+
+a = [17,21,29,38,4,9,25,32, 2, 3]
+print(MergeSort(a)) 
+
+tests = [
+    [10, 3, 15, 7, 8, 23, 98, 29],
+    [],
+    [-1],
+    [3],
+    [9,8,7,2],
+    [1,2,3,4,5]
+]
+
+for test in tests:
+    MergeSort(test)
+    print(test) 

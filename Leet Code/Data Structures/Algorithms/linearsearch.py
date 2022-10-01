@@ -73,3 +73,23 @@ def Linearsearch(array, target):
         if array[i] == target:
             return i 
     return -1 
+
+def LinearSearch(array, target):
+    for i in range(len(array)):
+        if array[i] == target:
+            return i 
+    return -1 
+
+def LinearSearch(array, target):
+    for i in range(len(array)):
+        if array[i] == target:
+            return i 
+    return -1 
+
+print(LinearSearch([1,2,3,4,5,6,7,8,9,10],7 ))
+
+def LinearSearch(array, target):
+    for i in range(len(array)):
+        if array[i] == target:
+            return i 
+    return -1 
