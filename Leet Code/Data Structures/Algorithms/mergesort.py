@@ -87,15 +87,112 @@ array = [54,26,93,17,77,31,44,55,20]
 a = mergesort(array) 
 print(a) 
     
+def MergeSort(array):
+    if len(array) <= 1:
+        return array 
+
+    mid = len(array) // 2 
+    left = array[:mid]
+    right = array[mid:]
+
+    MergeSort(left)
+    MergeSort(right)
+
+    return Merge(left, right, array)
+
+def Merge(left, right, array):
+    left_side = len(left)
+    right_side = len(right)
+
+    i = j = k = 0
+
+    while i < left_side and j < right_side:
+        if left[i] < right[j]:
+            array[k] = left[i]
+            i += 1 
+        else:
+            array[k] = right[j]
+            j += 1 
+        k += 1 
+    
+    while i < left_side:
+        array[k] = left[i]
+        i += 1 
+        k += 1 
+    
+    while j < right_side:
+        array[k] = right[j]
+        j += 1
+        k += 1 
+    return array 
+
+test_cases = [
+    [54,26,93,17,77,31,44,55,20],
+    [10, 3, 15, 7, 8, 23, 98, 29],
+    [],
+    [-1,-3,-5],
+    [9, 8, 7, 2],
+    [1, 2, 3, 4, 5] 
+]
+
+for arr in test_cases:
+    MergeSort(arr)
+    print(arr) 
 
 
-# test_cases = [
-#     [10, 3, 15, 7, 8, 23, 98, 29],
-#     [],
-#     [9, 8, 7, 2],
-#     [1, 2, 3, 4, 5] 
-# ]
+def MergeSort(array):
+    if len(array) <= 1:
+        return array 
+    
+    mid = len(array) // 2 
+    left = array[:mid]
+    right = array[mid:]
 
-# for arr in test_cases:
-#     merge_sort(arr)
-#     print(arr) 
+    MergeSort(left)
+    MergeSort(right)
+
+    return Merge(left, right, array) 
+
+def Merge(left, right, array):
+    left_array = len(left)
+    right_array = len(right)
+
+    i = j = k = 0 
+
+    while i < left_array and j < right_array:
+        if left[i] < right[j]:
+            array[k] = left[i]
+            i += 1 
+        else:
+            array[k] = right[j]
+            j += 1 
+        
+        k += 1 
+
+    while i < left_array:
+        array[k] = left[i]
+        i += 1 
+        k += 1 
+    
+    while j < right_array:
+        array[k] = right[j]
+        j += 1 
+        k += 1 
+    
+    return array 
+
+test_cases = [
+    [54,26,93,17,77,31,44,55,20],
+    [10, 3, 15, 7, 8, 23, 98, 29],
+    [],
+    [-1,-3,-5],
+    [9, 8, 7, 2],
+    [1, 2, 3, 4, 5],
+    [5,4,3,2,1]
+]
+
+for arr in test_cases:
+    MergeSort(arr)
+    print(arr) 
+
+

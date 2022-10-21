@@ -3,8 +3,6 @@
 #2. pivot items to the left are smaller
 #3. pivot items to the right are larger
 #[2, 6, 5, 3, 0, 8, 7, 1]
-from operator import le
-
 
 def quick_sort(sequence):
     length = len(sequence)
@@ -88,3 +86,138 @@ def quicksort4(elements):
     return quicksort4(items_lower) + [pivot] + quicksort4(items_greater)
 
 print(quicksort4([5,7,0,9,4,6,5,1,3,2]))
+
+def QuickSort(elements):
+    length = len(elements)
+
+    if length <= 1:
+        return elements
+    else:
+        pivot = elements.pop()
+    
+    items_g = []
+    items_l = []
+
+    for item in elements:
+        if item > pivot:
+            items_g.append(item)
+        else:
+            items_l.append(item)
+    
+    return QuickSort(items_l) + [pivot] + QuickSort(items_g)
+
+print(QuickSort([5,7,0,9,4,6,5,1,3,2]))
+
+def QuickSort(elements):
+    array = len(elements)
+
+    if array <= 1:
+        return elements
+    else:
+        pivot = elements.pop()
+    
+    items_g = []
+    items_l = []
+
+    for item in elements:
+        if item > pivot:
+            items_g.append(item)
+        else:
+            items_l.append(item)
+    
+    return QuickSort(items_l) + [pivot] + QuickSort(items_g)
+
+print(QuickSort([5,7,0,9,4,6,5,1,3,2]))
+
+from random import randint
+def quicksort(array):
+    if len(array) < 2:
+        return array 
+    
+    low, same, high = [], [], []
+
+    pivot = array[randint(0, len(array) -1)] 
+
+    for item in array:
+        if item < pivot:
+            low.append(item)
+        elif item == pivot:
+            same.append(item)
+        else:
+            high.append(item)
+    
+    return quicksort(low) + same + quicksort(high) 
+
+print(quicksort([5,7,0,9,4,6,5,1,3,2]))
+
+def QuickSort(array):
+    if len(array) <= 1:
+        return array 
+    else:
+        pivot = array.pop()
+    
+    low, high = [], []
+
+    for item in array:
+        if item < pivot:
+            low.append(item)
+        else:
+            high.append(item)
+    
+    return QuickSort(low) + [pivot] + QuickSort(high) 
+
+print(QuickSort([5,7,0,9,4,6,5,1,3,2]))
+
+def Quicksort2(array):
+    if len(array) <= 1:
+        return array 
+    else:
+        pivot = array.pop()
+
+    low, high = [], []
+
+    for item in array:
+        if item < pivot:
+            low.append(item)
+        else:
+            high.append(item)
+    
+    return Quicksort2(low) + [pivot] + Quicksort2(high) 
+
+print(Quicksort2([5,7,0,9,4,6,5,1,3,2]))
+
+def QuickSort3(array):
+    if len(array) <= 1:
+        return array 
+    else:
+        pivot = array.pop()
+    
+    low, high = [], []
+
+    for item in array:
+        if item < pivot:
+            low.append(item)
+        else:
+            high.append(item)
+    
+    return QuickSort3(low) + [pivot] + QuickSort3(high) 
+
+print(QuickSort3([5,7,0,9,4,6,5,1,3,2]))
+
+def QuickSort(array):
+    if len(array) <= 1:
+        return array 
+    else:
+        pivot = array.pop()
+    
+    below, above = [], []
+
+    for item in array:
+        if item < pivot:
+            below.append(item)
+        else:
+            above.append(item)
+    
+    return QuickSort(below) + [pivot] + QuickSort(above) 
+
+print(QuickSort([5,7,0,9,4,6,5,1,3,2]))

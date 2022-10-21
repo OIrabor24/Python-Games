@@ -80,5 +80,3 @@ class LinkedList():
                 node.next = new_node 
                 return 
         raise Exception("Node with data '%s' not found" % target_node_data) 
-
-

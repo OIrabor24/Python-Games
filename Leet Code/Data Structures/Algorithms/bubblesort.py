@@ -59,41 +59,92 @@ def BubbleSort(array):
 elements = [5,9,2,1,67,34,88,34, 80]
 print("Bubblesort 3:", BubbleSort(elements)) 
 
-def BubbleSort3(array):
-    indices = len(array) - 1 
+def BubbleSort(elements):
+    array = len(elements) - 1 
     sorted = False 
 
     while not sorted:
         sorted = True 
-        for i in range(0, indices):
-            if array[i] > array[i+1]:
-                sorted = False
-                array[i], array[i+1] = array[i+1], array[i]
-    return array 
-                
-elements = [5,9,2,1,67,34,88,34, 80]
-print("Bubblesort 3:", BubbleSort3(elements)) 
-            
-def Bubblesort4(elements):
-    indices = len(elements) - 1 
-    sorted = False 
-
-    while not sorted:
-        sorted = True 
-        for i in range(indices):
-            if elements[i] > elements[i+1]:
-                sorted = False 
-                elements[i], elements[i+1] = elements[i+1], elements[i] 
-    return elements
-
-def Bubblesort5(elements):
-    indices = len(elements) - 1 
-    sorted = False 
-
-    while not sorted:
-        sorted = True 
-        for i in range(indices):
+        for i in range(array):
             if elements[i] > elements[i+1]:
                 sorted = False 
                 elements[i], elements[i+1] = elements[i+1], elements[i]
     return elements
+
+print("BubbleSort:", BubbleSort([5,9,2,1,67,34,88,34, 80]))
+
+def bubble_sort(array):
+    n = len(array) - 1 
+    sorted_ = False 
+
+    while not sorted_:
+        sorted_ = True 
+        for i in range(n):
+            if array[i] > array[i+1]:
+                sorted_ = False 
+                array[i], array[i+1] = array[i+1], array[i]
+    
+    return array 
+
+print("bubble_sort:", bubble_sort([5,9,2,1,67,34,88,34, 80]))
+
+
+def BubbleSortRP(array): #real python
+    n = len(array)
+
+    for i in range(n):
+        #create a flag that allows the func to terminate
+        #early if there's nothing left to sort
+        already_sorted = True 
+
+        for j in range(n - i - 1):
+            if array[j] > array[j+1]:
+                array[j], array[j+1] = array[j+1], array[j]
+                already_sorted = False 
+        
+        if already_sorted:
+            break 
+    
+    return array 
+
+print(BubbleSortRP([5,9,2,1,67,34,88,34, 80]))
+
+
+rp =  [0.009201999986544251, ]
+easy = [0.009011399990413338]
+
+if easy < rp:
+    print("use easy implementation.")
+else:
+    print("good to know, but doesn't really matter.")
+
+
+def Bubble_Sort(array):
+    n = len(array) - 1 
+    sorted_val = False 
+
+    while not sorted_val:
+        sorted_val = True 
+        for i in range(n):
+            if array[i] > array[i+1]:
+                sorted_val = False 
+                array[i], array[i+1] = array[i+1], array[i]
+
+    return array 
+
+print(Bubble_Sort([5,9,2,1,67,34,88,34, 80]))
+
+def BubbleSortCuh(array):
+    arr = len(array) - 1 
+    sorted_ = False 
+
+    while not sorted_:
+        sorted_ = True 
+        for i in range(arr):
+            if array[i] > array[i+1]:
+                sorted_ = False 
+                array[i], array[i+1] = array[i+1], array[i]
+    
+    return array 
+
+print(BubbleSortCuh([5,9,2,1,67,34,88,34, 80]))
