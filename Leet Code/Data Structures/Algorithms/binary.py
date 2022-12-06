@@ -140,3 +140,23 @@ def BinarySearch(array, target):
     return -1 
 
 print(BinarySearch([12, 15, 17, 19, 21, 24, 45, 67], 15))
+
+#[1,2,3,4,5]
+def Binary_Search(array, target):
+    low = 0
+    high = len(array) - 1
+
+    while low <= high:
+        mid = (low + high) // 2 
+
+        if array[mid] == target:
+            return mid 
+        
+        elif array[mid] < target:
+            low = mid + 1 
+        else:
+            high = mid - 1 
+    
+    return -1 
+
+print(Binary_Search([12, 15, 17, 19, 21, 24, 45, 67], 21))

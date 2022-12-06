@@ -1,4 +1,3 @@
-
 class BSTNode():
     def __init__(self, data):
         self.data = data 
@@ -129,29 +128,26 @@ class BST():
         self.right = None 
 
     def __repr__(self):
-        return self.data 
+        return f"{self.data}"
     
     def add_child(self, data):
         if data == self.data:
             return 
         
         if data < self.data:
-            # add data in left subtree
             if self.left:
                 self.left.add_child(data)
             else:
                 self.left = BST(data)
         else:
             if self.right:
-                #add data in right subtree
                 self.right.add_child(data)
             else:
-                self.right = BST(data) 
-
-    
+                self.right = BST(data)
+        
     def find_min(self):
         if self.left is None:
-            return self.data 
+            return self.data
         
         return self.left.find_min() 
 
@@ -159,11 +155,11 @@ class BST():
         if self.right is None:
             return self.data 
         
-        return self.right.find_max()
+        return self.right.find_max() 
     
     def calculate_sum(self):
         left_sum = self.left.calculate_sum() if self.left else 0 
-        right_sum = self.right.calculate_sum() if self.right else 0 
+        right_sum = self.right.calculate_sum() if self.right else 0
 
         return self.data + left_sum + right_sum
     
@@ -178,16 +174,16 @@ class BST():
         
         elements.append(self.data)
 
-        return elements
+        return elements 
 
     def PreOrderTraversal(self):
         elements = []
 
         if self.left:
-            self.left.PreOrderTraversal()
+            elements += self.left.PreOrderTraversal()
         
         if self.right:
-            self.right.PreOrderTraversal()
+            elements += self.right.PreOrderTraversal()
         
         return elements
 
@@ -196,38 +192,39 @@ class BST():
         elements = []
 
         if self.left:
-            self.left.InOrderTraversal()
+            elements += self.left.InOrderTraversal()
         
         elements.append(self.data)
 
         if self.right:
-            self.right.InOrderTraversal()
+            elements += self.right.InOrderTraversal()
         
-        return elements 
+        return elements
 
     def Search(self, val):
         if self.data == val:
-            return True 
-
+            return True
+        
         if val < self.data:
             if self.left:
                 return self.left.Search(val)
             else:
                 return False 
-
+        
         if val > self.data:
             if self.right:
                 return self.right.Search(val)
             else:
-                return False  
+                return False 
+        
 
     
 def build_tree(elements):
-    root = BST(elements[0])
+    root = BST(data=elements[0])
 
     for i in range(1, len(elements)):
         root.add_child(elements[i])
-
+    
     return root 
 
 numbers = [17, 4, 1, 20, 9, 23, 18, 34]

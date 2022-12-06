@@ -8,7 +8,6 @@ def two_sum(nums, target):
         hashmap[n] = i 
     return 
 
-
 def groupAnagrams(strs):    
         d={} #sorted string : list of anagrams
         

@@ -130,3 +130,42 @@ queue.enqueue(3)
 queue.enqueue(5)
 print(queue)
 
+from collections import deque
+class Queue5():
+    def __init__(self):
+        self.queue = deque()
+    
+    def __repr__(self):
+        return f"{self.queue}"
+    
+    def enqueue(self, val):
+        self.queue.append(val)
+    
+    def dequeue(self):
+        if len(self.queue) == 0:
+            return 
+        return self.queue.popleft()
+    
+    def empty(self):
+        return len(self.queue) == 0 
+    
+    def size(self):
+        return len(self.queue)
+    
+    def front(self):
+        return self.queue[0] 
+    
+    def back(self):
+        return self.queue[-1] 
+
+line = Queue5() 
+line.enqueue(1)
+line.enqueue(2)
+line.enqueue(3)
+print(line) 
+print(line.dequeue())
+print(line) 
+print(line.empty())
+print(line.size())
+print(line.front())
+print(line.back())

@@ -210,14 +210,14 @@ def QuickSort(array):
     else:
         pivot = array.pop()
     
-    below, above = [], []
+    left, right = [], []
 
-    for item in array:
-        if item < pivot:
-            below.append(item)
+    for i in array:
+        if i < pivot:
+            left.append(i)
         else:
-            above.append(item)
+            right.append(i)
     
-    return QuickSort(below) + [pivot] + QuickSort(above) 
+    return QuickSort(left) + [pivot] + QuickSort(right) 
 
 print(QuickSort([5,7,0,9,4,6,5,1,3,2]))

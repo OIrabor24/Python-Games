@@ -136,15 +136,14 @@ print(Bubble_Sort([5,9,2,1,67,34,88,34, 80]))
 
 def BubbleSortCuh(array):
     arr = len(array) - 1 
-    sorted_ = False 
+    sorted_val = False 
 
-    while not sorted_:
-        sorted_ = True 
+    while not sorted_val:
+        sorted_val = True 
         for i in range(arr):
             if array[i] > array[i+1]:
-                sorted_ = False 
+                sorted_val = False 
                 array[i], array[i+1] = array[i+1], array[i]
-    
     return array 
 
 print(BubbleSortCuh([5,9,2,1,67,34,88,34, 80]))

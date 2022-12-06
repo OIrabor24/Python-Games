@@ -135,3 +135,40 @@ def Linear_Search(array, target):
     return -1 
 
 print(Linear_Search([1,2,3,4,5,6,7,8,9,10], 3))
+
+def LinearSearch(array, target):
+    for i in range(len(array)):
+        if array[i] == target:
+            return i 
+    return -1 
+
+print(LinearSearch([1,2,3,4,5,6,7,8,9,10], 2)) 
+
+
+def LinearSearchAdvanced(array, target):
+    for idx, val in enumerate(array):
+        if array[idx] == target:
+            return idx, val 
+    
+    return -1 
+
+print(LinearSearchAdvanced([1,2,3,4,5,6,7,8,9,10], 10))
+
+
+def Linear_Search(array, target):
+    for i in range(len(array)):
+        if array[i] == target:
+            return i 
+    return -1
+            
+
+print(Linear_Search([1,2,3,4,5,6,7,8,9,10], 5))
+
+def enumerate_search(array, target):
+    for idx, val in enumerate(array):
+        if array[idx] == target:
+            return idx, val
+    
+    return -1
+
+print(enumerate_search([1,2,3,4,5,6,7,8,9,10], 5))
